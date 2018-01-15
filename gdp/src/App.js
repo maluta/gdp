@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBox from './components/search_box';
+import ResultsBox from './components/results_box';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
         </header>
         <h1>Busca do Professor</h1>
         <p className="App-intro">
-	<SearchBox />
+        <SearchBox />
+        <ResultsBox />
         </p>
       </div>
     );
