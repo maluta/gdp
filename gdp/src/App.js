@@ -11,27 +11,33 @@ var googleSearch = new GoogleSearch({
 });
 
 
-googleSearch.build({
-  q: "frações",
-  start: 5,
-  gl: "pt-BR", //geolocation, 
-  lr: "lang_pt",
-  num: 10 // Number of search results to return between 1 and 10, inclusive 
-}, function(error, response) {
-  console.log(response);
-});
-
-//-------------------------
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { results: [] } ; 
+   
+
+   googleSearch.build({
+     q: "frações",
+     start: 5,
+     gl: "pt-BR", //geolocation, 
+     lr: "lang_pt",
+     num: 5 // Number of search results to return between 1 and 10, inclusive 
+   }, (error, response) => { this.setState( { results: response } ) } );
+
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
         </header>
-        <h1>Busca do Professor</h1>
+	<div className="container">
+        <h1 className="row" >Busca do Professor</h1>
         <SearchBox />
-        <ResultsBox />
+        <ResultsBox results={this.state.results} />
+        </div>
       </div>
     );
   }

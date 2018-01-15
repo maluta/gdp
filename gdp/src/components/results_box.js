@@ -3,15 +3,13 @@ import React, { Component } from 'react';
 class ResultsBox extends Component {
     constructor(props) {
       super(props);
-      this.state = { term: '' };
+      //const r = props.results.items.map( (re) => { return <li>{re}</li> });
    }
 
     render() { 
          return (
-         <div>
-	     <h3>Titulo: xxxxx</h3>
-	     <p>Descrição: xxxx</p>
-         </div>
+         <ul className="col-md-4 list-group">
+         </ul>
          );
 
     }

@@ -8,8 +8,10 @@ class SearchBox extends Component {
 
     render() { 
          return (
+           <div className="row">
            <input value={this.state.term} 
                   onChange={event => this.setState({ term: event.target.value })} />
+           </div>
          );
     }
 
